@@ -1,5 +1,7 @@
 package base;
 
+import java.util.Scanner;
+
 public class Main {
     /**
      * In our Assignment here we're running a little lemonade stand and we also sell pretzels. We need to keep track of
@@ -29,11 +31,41 @@ public class Main {
 
     public static void main(String[] args) {
         //	Replace this with your dry inventory function!
-        wet_inventory();
+        dry_inventory();
     }
 
     static void dry_inventory() {
         // Your DRY Solution goes here!
+        // I made a list for each of the values of each item and the tips
+        int [] pretzels = {4,2,3,1,2,10,6,1,2,6,9};
+        int [] lemonades = {1,3,2,6,4,8,1,7,3,2};
+        int [] tips_list = {4,10,5,10,4,3};
+
+        // Created a for loop that finds the sum of the pretzels
+        int pretzels_total = 0;
+        for(int x : pretzels){
+            pretzels_total += x;
+        }
+
+        // Created another for loop for the sum of the lemonades
+        int lemonade_total = 0;
+        for(int y : lemonades){
+            lemonade_total += y;
+        }
+
+        // Created a for loop for the sum of the tips
+        int tips_total = 0;
+        for(int z : tips_list){
+            tips_total += z;
+        }
+
+        // Printed the final values
+        System.out.println(" ");
+        System.out.println("Results for the hour!");
+        System.out.println("Lemonades Inventory: " + (lemonades_available - lemonade_total));
+        System.out.println("Pretzels Inventory: " + (pretzels_available - pretzels_total));
+        System.out.println("Cash: " + (cash + (lemonade_total * 8) + (pretzels_total * 2)));
+        System.out.println("Tips: " + (tips + tips_total));
     }
 
     static void wet_inventory() {
